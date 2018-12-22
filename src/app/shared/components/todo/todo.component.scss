@@ -1,0 +1,38 @@
+.mat-icon::before {
+  margin-right: 6px;
+  font-family: "Material Icons";
+  content: "panorama_fish_eye";
+}
+
+.mat-icon:hover::before {
+  margin-right: 6px;
+  font-family: "Material Icons";
+  content: "check_circle_outline";
+}
+
+.todo-title {
+  width: 370px;
+}
+
+.todo-duedate {
+  width: 75px;
+}
+
+.todo-title,
+.todo-duedate {
+  vertical-align: super;
+  display: inline-block;
+}
+
+.todo {
+  padding: 10px;
+  border-bottom: 1px solid silver;
+}
+
+.todo-edit {
+  padding: 10px;
+}
+
+mat-form-field {
+  margin-right: 5px;
+}

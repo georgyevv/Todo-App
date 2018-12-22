@@ -1,1 +1,28 @@
+#container {
+  width: 835px;
+  margin: 0 auto;
+}
 
+.categories {
+  float: left;
+  width: 250px;
+}
+
+.active-todos {
+  float: right;
+  width: 530px;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgba(192, 192, 192, 0.445);
+}

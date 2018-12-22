@@ -1,0 +1,10 @@
+.todo-add-wrapper {
+  margin-top: 20px;
+  cursor: pointer;
+  opacity: 0.4;
+}
+
+.todo-add-wrapper:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
