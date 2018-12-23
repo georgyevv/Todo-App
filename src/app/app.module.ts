@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { InboxModule } from './inbox/inbox.module';
+import { TodayModule } from './today/today.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { InboxModule } from './inbox/inbox.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     CoreModule,
-    InboxModule
+    InboxModule,
+    TodayModule
   ],
   bootstrap: [AppComponent]
 })

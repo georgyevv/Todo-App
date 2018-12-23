@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { InboxComponent } from './inbox/inbox.component';
+import { TodayComponent } from './today/today.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [InboxComponent],
+  declarations: [TodayComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -15,4 +15,4 @@ import { SharedModule } from '../shared/shared.module';
     MatSnackBarModule
   ]
 })
-export class InboxModule {}
+export class TodayModule { }

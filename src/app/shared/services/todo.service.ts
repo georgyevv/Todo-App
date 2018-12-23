@@ -9,10 +9,11 @@ import { map } from 'rxjs/operators';
 })
 export class TodoService {
   private dbReference = this.db.collection<TodoModel>('todos');
-  private todos: Observable<TodoModel[]>;
 
-  constructor(private db: AngularFirestore) {
-    this.todos = this.db
+  constructor(private db: AngularFirestore) {}
+
+  public getTodosList(): Observable<TodoModel[]> {
+    return this.db
       .collection<TodoModel>('todos', ref => ref.where('isDeleted', '==', false).orderBy('order', 'asc'))
       .snapshotChanges()
       .pipe(
@@ -27,8 +28,22 @@ export class TodoService {
       );
   }
 
-  public getTodosList(): Observable<TodoModel[]> {
-    return this.todos;
+  public todayTodos(): Observable<TodoModel[]> {
+    const today = new Date();
+
+    return this.db
+      .collection<TodoModel>('todos', ref => ref.where('date', '==', today.setHours(0, 0, 0, 0)))
+      .snapshotChanges()
+      .pipe(
+        map((rawResponse: any[]) => {
+          return rawResponse.map(reponseModel => {
+            const data = reponseModel.payload.doc.data() as TodoModel;
+            const id = reponseModel.payload.doc.id;
+
+            return { id, ...data } as TodoModel;
+          });
+        })
+      );
   }
 
   public create(todo: TodoModel): Promise<DocumentReference> {

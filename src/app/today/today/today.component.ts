@@ -4,11 +4,12 @@ import { TodoService } from 'src/app/shared/services/todo.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-inbox',
-  templateUrl: './inbox.component.html',
-  styleUrls: ['./inbox.component.scss']
+  selector: 'app-today',
+  templateUrl: './today.component.html',
+  styleUrls: ['./today.component.scss']
 })
-export class InboxComponent implements OnInit {
+export class TodayComponent implements OnInit {
+  public currentDate: Date;
   public activeTodos: TodoModel[];
   public completedTodos: TodoModel[];
   public lastCompletedTodo: TodoModel;
@@ -19,10 +20,11 @@ export class InboxComponent implements OnInit {
   constructor(public snackBar: MatSnackBar, public todoService: TodoService) {
     this.activeTodos = [];
     this.completedTodos = [];
+    this.currentDate = new Date();
   }
 
   ngOnInit() {
-    this.todoService.getTodosList().subscribe(todos => {
+    this.todoService.todayTodos().subscribe(todos => {
       this.todos = todos;
     });
   }
@@ -41,7 +43,8 @@ export class InboxComponent implements OnInit {
 
       if (this.lastDeletedTodo) {
         this.lastDeletedTodo.isDeleted = false;
-        this.todoService.update(this.lastDeletedTodo);
+        this.lastDeletedTodo.date = new Date(this.lastDeletedTodo.date);
+        this.addTodo(this.lastDeletedTodo);
         this.lastDeletedTodo = undefined;
       }
     });

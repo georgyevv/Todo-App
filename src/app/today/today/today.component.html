@@ -1,0 +1,20 @@
+<header>
+  <h1 style="display: inline-block">Today</h1>
+  <span style="font-size: 12px;"> {{currentDate | date: "mediumDate"}}</span>
+</header>
+
+<div *ngFor="let todo of (todos | activeTodos)">
+  <app-todo
+    [model]="todo"
+    (edit)="editTodo($event)"
+    (priority)="changeTodoPriority($event)"
+    (delete)="deleteTodo($event)"
+    (complete)="completeTodo($event)"
+    (moveUp)="moveTodoUp($event)"
+    (moveDown)="moveTodoDown($event)"></app-todo>
+</div>
+
+<app-add-todo
+  [duedate]="currentDate"
+  (add)="addTodo($event)">
+</app-add-todo>
