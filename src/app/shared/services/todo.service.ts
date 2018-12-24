@@ -32,7 +32,10 @@ export class TodoService {
     const today = new Date();
 
     return this.db
-      .collection<TodoModel>('todos', ref => ref.where('date', '==', today.setHours(0, 0, 0, 0)))
+      .collection<TodoModel>('todos', ref => ref
+        .where('date', '==', today.setHours(0, 0, 0, 0))
+        .where('isDeleted', '==', false)
+        .orderBy('order', 'asc'))
       .snapshotChanges()
       .pipe(
         map((rawResponse: any[]) => {

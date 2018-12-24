@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InboxComponent } from './inbox/inbox/inbox.component';
 import { TodayComponent } from './today/today/today.component';
+import { NextSevenDaysComponent } from './next-seven-days/next-seven-days/next-seven-days.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/inbox', pathMatch: 'full' },
   { path: 'inbox', component: InboxComponent },
   { path: 'today', component: TodayComponent },
-  { path: 'seven-days', component: InboxComponent }
+  { path: 'next-seven-days', component: NextSevenDaysComponent }
 ];
 
 @NgModule({

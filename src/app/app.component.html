@@ -2,26 +2,24 @@
 
 <div id="container">
   <div class="categories">
-      <div>
-          <button type="button" routerLink="/inbox">
-              <i class="material-icons md-24" style="vertical-align: text-bottom;">inbox</i>
-              Inbox
-          </button>
-      </div>
-      <div>
-          <button type="button" routerLink="/today">
-              <i class="material-icons md-24" style="vertical-align: text-bottom;">today</i>
-              Today
-          </button>
-      </div>
-      <div>
-          <button type="button" routerLink="/seven-days">
-              <i class="material-icons md-24" style="vertical-align: text-bottom;">filter_7</i>
-              Next 7 days
-          </button>
-      </div>
+    <div>
+      <button type="button" routerLink="/inbox">
+        <i class="material-icons md-24" style="vertical-align: text-bottom;">inbox</i>
+        Inbox
+      </button>
+    </div>
+    <div>
+      <button type="button" routerLink="/today">
+        <i class="material-icons md-24" style="vertical-align: text-bottom;">today</i>
+        Today
+      </button>
+    </div>
+    <div>
+      <button type="button" routerLink="/next-seven-days">
+        <i class="material-icons md-24" style="vertical-align: text-bottom;">filter_7</i>
+        Next 7 days
+      </button>
+    </div>
   </div>
-  <div class="active-todos">
-      <router-outlet></router-outlet>
-  </div>
+  <div class="active-todos"><router-outlet></router-outlet></div>
 </div>

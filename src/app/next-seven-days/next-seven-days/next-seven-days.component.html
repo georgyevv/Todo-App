@@ -1,0 +1,87 @@
+<header>
+  <h1 style="display: inline-block">Next 7 days</h1>
+</header>
+
+<div class="tasks-by-date-container">
+  <header>
+      <h2 style="display: inline-block">Today</h2>
+      <span style="font-size: 12px;"> {{today | date: "mediumDate"}}</span>
+  </header>
+  <div *ngFor="let todo of (todayTodos | activeTodos)">
+      <app-todo [model]="todo" (delete)="deleteTodo($event, 'todayTodos')" (complete)="completeTodo($event, 'todayTodos')" (moveUp)="moveTodoUp($event, todayTodos)"
+          (moveDown)="moveTodoDown($event, todayTodos)"></app-todo>
+  </div>
+  <app-add-todo [duedate]="today" (add)="addTodo($event, todayTodos)"></app-add-todo>
+</div>
+
+<div class="tasks-by-date-container">
+  <header>
+      <h2 style="display: inline-block">Tomorrow</h2>
+      <span style="font-size: 12px;"> {{tomorrow | date: "mediumDate"}}</span>
+  </header>
+  <div *ngFor="let todo of (tomorrowTodos| activeTodos)">
+      <app-todo [model]="todo" (delete)="deleteTodo($event, 'tomorrowTodos')" (complete)="completeTodo($event, 'tomorrowTodos')"
+          (moveUp)="moveTodoUp($event, tomorrowTodos)" (moveDown)="moveTodoDown($event, tomorrowTodos)"></app-todo>
+  </div>
+  <app-add-todo [duedate]="tomorrow" (add)="addTodo($event, tomorrowTodos)"></app-add-todo>
+</div>
+
+<div class="tasks-by-date-container">
+  <header>
+      <h2 style="display: inline-block">{{weekDays[thirdDay.getDay()]}}</h2>
+      <span style="font-size: 12px;"> {{thirdDay | date: "mediumDate"}}</span>
+  </header>
+  <div *ngFor="let todo of (thirdDayTodos| activeTodos)">
+      <app-todo [model]="todo" (delete)="deleteTodo($event, 'thirdDayTodos')" (complete)="completeTodo($event, 'thirdDayTodos')"
+          (moveUp)="moveTodoUp($event, thirdDayTodos)" (moveDown)="moveTodoDown($event, thirdDayTodos)"></app-todo>
+  </div>
+  <app-add-todo [duedate]="thirdDay" (add)="addTodo($event, thirdDayTodos)"></app-add-todo>
+</div>
+
+<div class="tasks-by-date-container">
+  <header>
+      <h2 style="display: inline-block">{{weekDays[fourthDay.getDay()]}}</h2>
+      <span style="font-size: 12px;"> {{fourthDay | date: "mediumDate"}}</span>
+  </header>
+  <div *ngFor="let todo of (fourthDayTodos| activeTodos)">
+      <app-todo [model]="todo" (delete)="deleteTodo($event, 'fourthDayTodos')" (complete)="completeTodo($event, 'fourthDayTodos')"
+          (moveUp)="moveTodoUp($event, fourthDayTodos)" (moveDown)="moveTodoDown($event, fourthDayTodos)"></app-todo>
+  </div>
+  <app-add-todo [duedate]="fourthDay" (add)="addTodo($event, fourthDayTodos)"></app-add-todo>
+</div>
+
+<div class="tasks-by-date-container">
+  <header>
+      <h2 style="display: inline-block">{{weekDays[fifthDay.getDay()]}}</h2>
+      <span style="font-size: 12px;"> {{fifthDay | date: "mediumDate"}}</span>
+  </header>
+  <div *ngFor="let todo of (fiftDayTodos| activeTodos)">
+      <app-todo [model]="todo" (delete)="deleteTodo($event, 'fiftDayTodos')" (complete)="completeTodo($event, 'fiftDayTodos')" (moveUp)="moveTodoUp($event, fiftDayTodos)"
+          (moveDown)="moveTodoDown($event, fiftDayTodos)"></app-todo>
+  </div>
+  <app-add-todo [duedate]="fifthDay" (add)="addTodo($event, fiftDayTodos)"></app-add-todo>
+</div>
+
+<div class="tasks-by-date-container">
+  <header>
+      <h2 style="display: inline-block">{{weekDays[sixthDay.getDay()]}}</h2>
+      <span style="font-size: 12px;"> {{sixthDay | date: "mediumDate"}}</span>
+  </header>
+  <div *ngFor="let todo of (sixthDayTodos| activeTodos)">
+      <app-todo [model]="todo" (delete)="deleteTodo($event, 'sixthDayTodos')" (complete)="completeTodo($event, 'sixthDayTodos')" (moveUp)="moveTodoUp($event, sixthDayTodos)"
+          (moveDown)="moveTodoDown($event, sixthDayTodos)"></app-todo>
+  </div>
+  <app-add-todo [duedate]="sixthDay" (add)="addTodo($event, sixthDayTodos)"></app-add-todo>
+</div>
+
+<div class="tasks-by-date-container">
+  <header>
+      <h2 style="display: inline-block">{{weekDays[seventhDay.getDay()]}}</h2>
+      <span style="font-size: 12px;"> {{seventhDay | date: "mediumDate"}}</span>
+  </header>
+  <div *ngFor="let todo of (seventhDayTodos| activeTodos)">
+      <app-todo [model]="todo" (delete)="deleteTodo($event, 'seventhDayTodos')" (complete)="completeTodo($event, 'seventhDayTodos')" (moveUp)="moveTodoUp($event, seventhDayTodos)"
+          (moveDown)="moveTodoDown($event, seventhDayTodos)"></app-todo>
+  </div>
+  <app-add-todo [duedate]="seventhDay" (add)="addTodo($event, seventhDayTodos)"></app-add-todo>
+</div>
