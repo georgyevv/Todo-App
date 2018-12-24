@@ -28,6 +28,24 @@ export class TodoService {
       );
   }
 
+  public getTodosListByTitle(title: string): Observable<TodoModel[]> {
+    return this.db
+      .collection<TodoModel>('todos', ref => ref
+        .where('isDeleted', '==', false)
+        .where('title', '==', title))
+      .snapshotChanges()
+      .pipe(
+        map((rawResponse: any[]) => {
+          return rawResponse.map(reponseModel => {
+            const data = reponseModel.payload.doc.data() as TodoModel;
+            const id = reponseModel.payload.doc.id;
+
+            return { id, ...data } as TodoModel;
+          });
+        })
+      );
+  }
+
   public todayTodos(): Observable<TodoModel[]> {
     const today = new Date();
 

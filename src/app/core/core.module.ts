@@ -7,6 +7,7 @@ import { throwIfAlreadyLoaded } from './module-import.guard';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
+import { SearchModule } from '../search/search.module';
 
 @NgModule({
   declarations: [HeaderComponent],
@@ -15,7 +16,8 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     MatFormFieldModule,
     MatToolbarModule,
-    MatInputModule
+    MatInputModule,
+    SearchModule
   ],
   exports: [HeaderComponent]
 })

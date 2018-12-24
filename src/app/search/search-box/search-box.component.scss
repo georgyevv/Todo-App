@@ -1,0 +1,14 @@
+.search {
+  margin: 0px 0px 0px 726px;
+  width: 385px;
+
+  .search-box {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+mat-toolbar {
+  margin-bottom: 20px;
+}

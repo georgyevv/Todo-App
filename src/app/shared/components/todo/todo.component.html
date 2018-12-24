@@ -15,20 +15,22 @@
       <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 
-  <span style="margin-left: 11px;cursor: pointer;" [matMenuTriggerFor]="menu" *ngIf="!model.isEditMode">
+  <span *ngIf="showContextMenu">
+    <span style="margin-left: 11px;cursor: pointer;" [matMenuTriggerFor]="menu" *ngIf="!model.isEditMode">
       <i class="material-icons md-24">more_horiz</i>
+    </span>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="moveTodoUp()">Move up</button>
+        <button mat-menu-item (click)="moveTodoDown()">Move down</button>
+        <button mat-menu-item (click)="deleteTodo()">Delete</button>
+        <div style="background: #c0c0c069; text-align: center;">
+            <i class="material-icons md-24" style="cursor: pointer;" (click)="updateTodoPriority('black')">outlined_flag</i>
+            <i class="material-icons md-24" style="color: yellow; cursor: pointer;" (click)="updateTodoPriority('yellow')">flag</i>
+            <i class="material-icons md-24" style="color: orange; cursor: pointer;" (click)="updateTodoPriority('orange')">flag</i>
+            <i class="material-icons md-24" style="color: red; cursor: pointer;" (click)="updateTodoPriority('red')">flag</i>
+        </div>
+    </mat-menu>
   </span>
-  <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="moveTodoUp()">Move up</button>
-      <button mat-menu-item (click)="moveTodoDown()">Move down</button>
-      <button mat-menu-item (click)="deleteTodo()">Delete</button>
-      <div style="background: #c0c0c069; text-align: center;">
-          <i class="material-icons md-24" style="cursor: pointer;" (click)="updateTodoPriority('black')">outlined_flag</i>
-          <i class="material-icons md-24" style="color: yellow; cursor: pointer;" (click)="updateTodoPriority('yellow')">flag</i>
-          <i class="material-icons md-24" style="color: orange; cursor: pointer;" (click)="updateTodoPriority('orange')">flag</i>
-          <i class="material-icons md-24" style="color: red; cursor: pointer;" (click)="updateTodoPriority('red')">flag</i>
-      </div>
-  </mat-menu>
 
   <div *ngIf="model.isEditMode" style="margin-bottom: 15px;">
       <button mat-raised-button color="primary" (click)="saveEditMode()">Save</button>

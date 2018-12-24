@@ -13,6 +13,8 @@ export class TodoComponent {
   public editTitle: string;
   public editDueDate: Date;
 
+  @Input() editable = true;
+  @Input() showContextMenu = true;
   @Input() model: TodoModel;
   @Output() priority = new EventEmitter<TodoModel>();
   @Output() edit = new EventEmitter<TodoModel>();
@@ -61,6 +63,10 @@ export class TodoComponent {
   }
 
   public toggleEditMode() {
+    if (!this.editable) {
+      return;
+    }
+
     this.model.isEditMode = !this.model.isEditMode;
     if (!this.model.isEditMode) {
       this.editTitle = undefined;

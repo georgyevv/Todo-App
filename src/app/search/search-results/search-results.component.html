@@ -1,0 +1,11 @@
+<div>
+  <p>Found <b>{{ (resultTodos | activeTodos).length }}</b> results for query <b>{{ searchQuery }}</b></p>
+</div>
+
+<div *ngFor="let todo of (resultTodos | activeTodos)">
+  <app-todo
+    [model]="todo"
+    (complete)="completeTodo($event)"
+    [showContextMenu]="false"
+    [editable]="false"></app-todo>
+</div>
