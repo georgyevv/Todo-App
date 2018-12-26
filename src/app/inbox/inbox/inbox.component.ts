@@ -21,7 +21,7 @@ export class InboxComponent implements OnInit {
     this.completedTodos = [];
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.todoService.getTodosList().subscribe(todos => {
       this.todos = todos;
     });

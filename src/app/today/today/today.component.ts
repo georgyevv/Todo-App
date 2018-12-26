@@ -23,7 +23,7 @@ export class TodayComponent implements OnInit {
     this.currentDate = new Date();
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.todoService.todayTodos().subscribe(todos => {
       this.todos = todos;
     });

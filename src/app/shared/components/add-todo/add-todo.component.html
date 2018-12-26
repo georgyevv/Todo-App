@@ -1,8 +1,8 @@
-<div *ngIf="addTodoMode" style="padding: 10px;">
-  <mat-form-field style="width: 400px">
+<div *ngIf="addTodoMode" class="todo">
+  <mat-form-field class="todo__title">
       <input matInput placeholder="Title" [(ngModel)]="title">
   </mat-form-field>
-  <mat-form-field style="width: 110px">
+  <mat-form-field class="todo__date">
       <input matInput [matDatepicker]="picker" placeholder="Due date" [(ngModel)]="_duedate">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
@@ -12,7 +12,7 @@
   <button mat-button (click)="addTodoMode = false">Cancel</button>
 </div>
 
-<div *ngIf="!addTodoMode" class="todo-add-wrapper" (click)="addTodoMode = true">
+<div *ngIf="!addTodoMode" class="todo-add" (click)="addTodoMode = true">
   <i class="material-icons md-24">add</i>
-  <span style="vertical-align: super;">Add Todo</span>
+  <span class="todo-add--super">Add Todo</span>
 </div>

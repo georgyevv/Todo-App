@@ -1,10 +1,22 @@
-.todo-add-wrapper {
-  margin-top: 20px;
-  cursor: pointer;
-  opacity: 0.4;
+.todo-add {
+    margin-top: 20px;
+    cursor: pointer;
+    opacity: 0.4;
+    &:hover {
+        text-decoration: underline;
+        opacity: 1;
+    }
+}
+.todo-add--super {
+  vertical-align: super;
 }
 
-.todo-add-wrapper:hover {
-  text-decoration: underline;
-  opacity: 1;
+.todo {
+  padding: 10px;
+}
+.todo__title {
+  width: 400px;
+}
+.todo__date {
+  width: 110px;
 }

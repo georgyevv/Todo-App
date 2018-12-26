@@ -1,3 +1,56 @@
+.todo-overview {
+  padding: 10px;
+  border-bottom: 1px solid silver;
+}
+.todo-overview__complete-action {
+  cursor: pointer;
+}
+.todo-overview__title {
+  width: 370px;
+  vertical-align: super;
+  display: inline-block;
+}
+.todo-overview__duedate {
+  width: 75px;
+  vertical-align: super;
+  display: inline-block;
+}
+.todo-overview__actions {
+  margin-left: 11px;
+  cursor: pointer;
+}
+
+.todo-edit {
+  padding: 10px;
+}
+.todo-edit__title {
+  width: 400px;
+}
+.todo-edit__duedate {
+  width: 110px
+}
+.todo-edit__actions {
+  margin-bottom: 15px;
+}
+
+.context-menu__priority {
+  background: #c0c0c069;
+  text-align: center;
+  cursor: pointer;
+}
+.context-menu__priority--black {
+  color: black;
+}
+.context-menu__priority--yellow {
+  color: yellow;
+}
+.context-menu__priority--orange {
+  color: orange;
+}
+.context-menu__priority--red {
+  color: red;
+}
+
 .mat-icon::before {
   margin-right: 6px;
   font-family: "Material Icons";
@@ -8,31 +61,4 @@
   margin-right: 6px;
   font-family: "Material Icons";
   content: "check_circle_outline";
-}
-
-.todo-title {
-  width: 370px;
-}
-
-.todo-duedate {
-  width: 75px;
-}
-
-.todo-title,
-.todo-duedate {
-  vertical-align: super;
-  display: inline-block;
-}
-
-.todo {
-  padding: 10px;
-  border-bottom: 1px solid silver;
-}
-
-.todo-edit {
-  padding: 10px;
-}
-
-mat-form-field {
-  margin-right: 5px;
 }

@@ -1,6 +1,6 @@
 <header>
-  <h1 style="display: inline-block">Today</h1>
-  <span style="font-size: 12px;"> {{currentDate | date: "mediumDate"}}</span>
+  <h1 class="header--big">Today</h1>
+  <span class="header--small"> {{currentDate | date: "mediumDate"}}</span>
 </header>
 
 <div *ngFor="let todo of (todos | activeTodos)">
@@ -11,7 +11,8 @@
     (delete)="deleteTodo($event)"
     (complete)="completeTodo($event)"
     (moveUp)="moveTodoUp($event)"
-    (moveDown)="moveTodoDown($event)"></app-todo>
+    (moveDown)="moveTodoDown($event)">
+  </app-todo>
 </div>
 
 <app-add-todo
